@@ -5,11 +5,16 @@
     --color-dark-background: #171c28;
     --color-dark-font: #afafbf;
     --color-dark-border: #2d3748;
+    --color-tertiary: #007bff;
 }
 
 html {
     font-family: 'Inter', sans-serif;
     font-weight: normal;
+}
+
+body {
+    line-height: 1.5;
 }
 
 body.light {
@@ -235,13 +240,10 @@ input:checked + .slider:before {
     border-bottom: 1px solid var(--color-light-border);
 }
 
-.dark .link {
-    border-bottom: 1px solid var(--color-dark-border);
-}
-
 .skill-heading, .section-item-name {
     font-size: 1.2rem;
     padding-bottom: 10px;
+    /* color: var(--color-tertiary); */
 }
 
 .skill {
@@ -275,6 +277,72 @@ input:checked + .slider:before {
 
 .designation-sub-level {
     margin-top: 10px;
+}
+
+.tab-and-content-container {
+    display: flex;
+    min-height: 300px;
+    flex-direction: column;
+}
+
+.tab-content-wrapper {
+    padding: unset;
+    padding-top: 20px;
+}
+
+.tab {
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.tab button {
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    width: inherit;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0 2px 2px 0;
+    transition: border-color .5s ease-in-out;
+    border-bottom: 3px solid;
+}
+
+.light .tab button {
+    color: var(--color-light-font);
+    border-color: var(--color-light-border);
+}
+
+.light .tab button:hover {
+    background-color: var(--color-light-border);
+}
+
+.dark .tab button {
+    color: var(--color-dark-font);
+    border-color: var(--color-dark-border);
+}
+
+.dark .tab button:hover {
+    background-color: var(--color-dark-border);
+}
+
+.light .tab button.active {
+    color: var(--color-tertiary);
+    border-color: var(--color-tertiary);
+    background-color: var(--color-light-border);
+}
+
+.dark .tab button.active {
+    color: var(--color-tertiary);
+    border-color: var(--color-tertiary);
+    background-color: var(--color-dark-border);
+}
+
+.job-company {
+    font-size: 1rem;
 }
 
 .footer {
@@ -321,5 +389,30 @@ input:checked + .slider:before {
         flex-direction: row;
         width: 70%; 
         margin: 10px auto;
+    }
+
+    .job-duration {
+        font-size: 0.8rem;
+        margin-top: 2px;
+    }
+
+    .tab-and-content-container {
+        flex-direction: row;
+        padding: 20px 10px;
+    }
+
+    .tab-content-wrapper {
+        padding: 0px 20px;
+    }
+
+    .tab {
+        flex-direction: column;
+        width: 150px;
+        overflow: unset;
+    }
+
+    .tab button {
+        border-bottom: unset;
+        border-left: 3px solid;
     }
 }
