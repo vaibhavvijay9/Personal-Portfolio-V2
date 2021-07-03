@@ -294,6 +294,7 @@ input:checked + .slider:before {
     display: flex;
     white-space: nowrap;
     overflow: auto;
+    width: 100%;
 }
 
 .tab button {
