@@ -12,6 +12,24 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     --color-tertiary: #007bff;
 }
 
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/font/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    font-weight: 300;
+    src: url('./assets/font/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    src: url('./assets/font/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+
 html {
     font-family: 'Inter', sans-serif;
     font-weight: normal;
