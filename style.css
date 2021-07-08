@@ -6,9 +6,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     --color-light-background: #fff;
     --color-light-font: #444452;
     --color-light-border: #cbd5e0;
+    --color-light-active: #ecf4ff;
     --color-dark-background: #171c28;
     --color-dark-font: #afafbf;
     --color-dark-border: #2d3748;
+    --color-dark-active: #232933;;
     --color-tertiary: #007bff;
 }
 
@@ -340,7 +342,7 @@ input:checked + .slider:before {
 }
 
 .light .tab button:hover {
-    background-color: var(--color-light-border);
+    background-color: var(--color-light-active);
 }
 
 .dark .tab button {
@@ -349,19 +351,19 @@ input:checked + .slider:before {
 }
 
 .dark .tab button:hover {
-    background-color: var(--color-dark-border);
+    background-color: var(--color-dark-active);
 }
 
 .light .tab button.active {
     color: var(--color-tertiary);
     border-color: var(--color-tertiary);
-    background-color: var(--color-light-border);
+    background-color: var(--color-light-active);
 }
 
 .dark .tab button.active {
     color: var(--color-tertiary);
     border-color: var(--color-tertiary);
-    background-color: var(--color-dark-border);
+    background-color: var(--color-dark-active);
 }
 
 .job-company {
