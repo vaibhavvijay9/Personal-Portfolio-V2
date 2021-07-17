@@ -6,14 +6,13 @@ if (prefersDarkScheme.matches) {
 }
 // Listen for a change on switch
 toggleSwitch.addEventListener('change', function() {
-    // If the OS is set to dark mode...
-    if (prefersDarkScheme.matches) {
-      // ...then apply the .light class to override those styles
-      document.body.classList.toggle("light");
-      // Otherwise...
-    } else {
-      // ...apply the .dark class to override the default light styles
-      document.body.classList.toggle("dark");
+    if (toggleSwitch.checked == true){
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+    } 
+    else {
+        document.body.classList.remove("dark");
+        document.body.classList.add("light");
     }
 });
 
