@@ -2,16 +2,43 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* Reset CSS - END */
 
-:root {
-    --color-light-background: #fff;
-    --color-light-font: #444452;
-    --color-light-border: #cbd5e0;
-    --color-light-active: #ecf4ff;
-    --color-dark-background: #171c28;
-    --color-dark-font: #afafbf;
-    --color-dark-border: #2d3748;
-    --color-dark-active: #232933;;
+/* Default colors */
+body {
+    --color-background: #fff;
+    --color-font: #444452;
+    --color-border: #cbd5e0;
+    --color-border-2: #2d3748;
+    --color-active: #ecf4ff;
     --color-tertiary: #007bff;
+}
+/* Dark theme colors */
+body.dark {
+    --color-background: #171c28;
+    --color-font: #afafbf;
+    --color-border: #2d3748;
+    --color-border-2: #cbd5e0;
+    --color-active: #232933;
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body { 
+        --color-background: #171c28;
+        --color-font: #afafbf;
+        --color-border: #2d3748;
+        --color-border-2: #cbd5e0;
+        --color-active: #232933;
+    }
+    /* Override dark mode with light mode styles if the user decides to swap */
+    body.light {
+        --color-background: #fff;
+        --color-font: #444452;
+        --color-border: #cbd5e0;
+        --color-border-2: #2d3748;
+        --color-active: #ecf4ff;
+        --color-tertiary: #007bff;
+    }
 }
 
 @font-face {
@@ -41,14 +68,9 @@ body {
     line-height: 1.5;
 }
 
-body.light {
-    color : var(--color-light-font);
-    background-color: var(--color-light-background);
-}
-
-body.dark {
-    color : var(--color-dark-font);
-    background-color: var(--color-dark-background);
+body {
+    color : var(--color-font);
+    background-color: var(--color-background);
 }
 
 .switch-container {
@@ -63,7 +85,7 @@ body.dark {
     height: 17px;
 }
 
-.light .sun {
+.sun {
     background: url(./images/sun.svg) no-repeat center;
     background-size: 100%;
 }
@@ -73,7 +95,7 @@ body.dark {
     background-size: 100%;
 }
 
-.light .moon {
+.moon {
     background: url(./images/moon.svg) no-repeat center;
     background-size: 100%;
 }
@@ -138,7 +160,7 @@ input:checked + .slider:before {
 }
 
 .landing-screen {
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .home {
@@ -185,15 +207,11 @@ input:checked + .slider:before {
     opacity: 0.6;
 }
 
-.light .home-social-icon {
-    border: 1px solid var(--color-dark-border);
+.home-social-icon {
+    border: 1px solid var(--color-border-2);
 }
 
-.dark .home-social-icon {
-    border: 1px solid var(--color-light-border);
-}
-
-.light .linkedin-icon {
+.linkedin-icon {
     background: url(./images/linkedin.svg) no-repeat center;
 }
 
@@ -201,7 +219,7 @@ input:checked + .slider:before {
     background: url(./images/linkedin-white.svg) no-repeat center;
 }
 
-.light .github-icon {
+.github-icon {
     background: url(./images/github.svg) no-repeat center;
 }
 
@@ -209,7 +227,7 @@ input:checked + .slider:before {
     background: url(./images/github-white.svg) no-repeat center;
 }
 
-.light .email-icon {
+.email-icon {
     background: url(./images/envelope.svg) no-repeat center;
 }
 
@@ -229,19 +247,13 @@ input:checked + .slider:before {
 }
 
 .download-btn:hover {
-    box-shadow: 2px 2px 8px 0px var(--color-light-font);
+    box-shadow: 2px 2px 8px 0px var(--color-font);
 }
 
-.light .download-btn {
-    background-color: var(--color-light-background);
-    color: var(--color-light-font);
-    border: 1px solid var(--color-dark-border);
-}
-
-.dark .download-btn {
-    background-color: var(--color-light-background);
-    color: var(--color-light-font);
-    border: 1px solid var(--color-light-border);
+.download-btn {
+    background-color: var(--color-background);
+    color: var(--color-font);
+    border: 1px solid var(--color-border-2);
 }
 
 .download-btn-icon {
@@ -260,8 +272,8 @@ input:checked + .slider:before {
     font-weight: 500;
 }
 
-.light .section-heading {
-    border-bottom: 1px solid var(--color-light-border);
+.section-heading {
+    border-bottom: 1px solid var(--color-border);
 }
 
 .skill-heading, .section-item-name {
@@ -287,7 +299,7 @@ input:checked + .slider:before {
     line-height: 1.5;
 }
 
-.light .section-item-description {
+.section-item-description {
     list-style-image: url(images/play.svg);
 }
 
@@ -333,37 +345,22 @@ input:checked + .slider:before {
     transition: 0.3s;
     border-radius: 0 2px 2px 0;
     transition: border-color .5s ease-in-out;
-    border-bottom: 3px solid;
+    border-bottom: 3px solid var(--color-border);
 }
 
-.light .tab button {
-    color: var(--color-light-font);
-    border-color: var(--color-light-border);
+.tab button {
+    color: var(--color-font);
+    /* border-color: var(--color-border-2); */
 }
 
-.light .tab button:hover {
-    background-color: var(--color-light-active);
+.tab button:hover {
+    background-color: var(--color-active);
 }
 
-.dark .tab button {
-    color: var(--color-dark-font);
-    border-color: var(--color-dark-border);
-}
-
-.dark .tab button:hover {
-    background-color: var(--color-dark-active);
-}
-
-.light .tab button.active {
+.tab button.active {
     color: var(--color-tertiary);
     border-color: var(--color-tertiary);
-    background-color: var(--color-light-active);
-}
-
-.dark .tab button.active {
-    color: var(--color-tertiary);
-    border-color: var(--color-tertiary);
-    background-color: var(--color-dark-active);
+    background-color: var(--color-active);
 }
 
 .job-company {
@@ -438,6 +435,6 @@ input:checked + .slider:before {
 
     .tab button {
         border-bottom: unset;
-        border-left: 3px solid;
+        border-left: 3px solid var(--color-border);
     }
 }

@@ -1,22 +1,21 @@
-function toggleTheme() {
-    var element = document.body;
-    
-    // var checkBox = document.getElementById("themeSwitch");
-    
-    // if (checkBox.checked == true){
-        element.classList.toggle("dark");
-    // } 
-    // else {
-    //     element.classList.toggle("light");
-    // }
+const toggleSwitch = document.getElementById("themeSwitch");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+if (prefersDarkScheme.matches) {
+    toggleSwitch.checked = true;
+    document.body.classList.toggle("dark");
 }
-
-function setInitialView(){
-    var element = document.body;
-    element.classList.toggle("light");
-}
-
-setInitialView();
+// Listen for a change on switch
+toggleSwitch.addEventListener('change', function() {
+    // If the OS is set to dark mode...
+    if (prefersDarkScheme.matches) {
+      // ...then apply the .light class to override those styles
+      document.body.classList.toggle("light");
+      // Otherwise...
+    } else {
+      // ...apply the .dark class to override the default light styles
+      document.body.classList.toggle("dark");
+    }
+});
 
 
 // Tabs
