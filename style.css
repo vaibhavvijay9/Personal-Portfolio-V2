@@ -74,13 +74,22 @@ body {
     line-height: 1.5;
 }
 
+.container {
+    /* width: 100%; */
+    min-width: 0;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+
 body {
     color : var(--color-font);
     background-color: var(--color-background);
 }
 
 .switch-container {
-    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -166,11 +175,11 @@ input:checked + .slider:before {
 }
 
 .landing-screen {
-    min-height: 90vh;
+    padding: 0 10px;
 }
 
 .home {
-    margin: 60px 0px 20px 40px;
+    margin-top: 60px;
 }
 
 .home-greeting {
@@ -181,7 +190,6 @@ input:checked + .slider:before {
 
 .home-text {
     font-size: 1.7rem;
-    width: 80%;
     line-height: 1.2;
     margin: 30px 0;
     font-weight: 300;
@@ -247,7 +255,7 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    margin: 40px 10px 10px;
+    margin: 40px 10px 10px 0;
     width: 108px;
     text-decoration: none;
 }
@@ -277,7 +285,7 @@ input:checked + .slider:before {
 
 .section-container {
     margin: 20px auto;
-    padding: 20px 30px;
+    padding: 20px 10px;
 }
 
 .section-heading {
@@ -366,17 +374,13 @@ input:checked + .slider:before {
     width: inherit;
     border: none;
     outline: none;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 0 2px 2px 0;
     transition: border-color .5s ease-in-out;
     border-bottom: 3px solid var(--color-border);
-}
-
-.tab button {
     color: var(--color-font);
-    /* border-color: var(--color-border-2); */
 }
 
 .tab button:hover {
@@ -406,9 +410,8 @@ input:checked + .slider:before {
 }
 
 @media (min-width: 768px){
-    .home {
-        width: 70%;
-        margin: 60px 0px 20px 100px;
+    .landing-screen {
+        padding: unset;
     }
 
     .home-greeting {
@@ -425,7 +428,6 @@ input:checked + .slider:before {
 
     .section-container {
         margin: 80px auto;
-        width: 70%;
         padding: unset;
     }
 
@@ -460,6 +462,7 @@ input:checked + .slider:before {
     }
 
     .tab button {
+        text-align: left;
         border-bottom: unset;
         border-left: 3px solid var(--color-border);
     }
