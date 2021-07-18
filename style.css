@@ -308,6 +308,10 @@ input:checked + .slider:before {
     padding-bottom: 10px;
 }
 
+.about-paragraph {
+    margin-bottom: 20px;
+}
+
 .skill-heading {
     color: var(--color-tertiary);
 }
@@ -395,6 +399,7 @@ input:checked + .slider:before {
 
 .job-company {
     font-size: 1rem;
+    color: var(--color-tertiary);
 }
 
 .footer {
