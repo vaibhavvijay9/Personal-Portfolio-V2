@@ -344,10 +344,6 @@ input:checked + .slider:before {
     padding-bottom: 8px;
 }
 
-/* .designation {
-    font-style: italic;
-} */
-
 .designation-sub-level {
     margin-top: 10px;
 }
