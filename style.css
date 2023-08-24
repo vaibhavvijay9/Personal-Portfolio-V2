@@ -302,6 +302,10 @@ input:checked + .slider:before {
     border-bottom: 1px solid var(--color-border-2);
 }
 
+.tt-icon {
+    vertical-align: sub;
+}
+
 .skill-heading, .section-item-name {
     font-size: 1.2rem;
     padding-bottom: 10px;
